@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Container, VStack, HStack, Text, Textarea, Button, Box, IconButton, useToast } from "@chakra-ui/react";
+import { Container, VStack, HStack, Text, Textarea, Button, Box, IconButton, useToast, Link } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 import { FaRocket, FaCode, FaFileAlt, FaCogs, FaUsers, FaShieldAlt, FaBug, FaSyncAlt } from "react-icons/fa";
 
 const Index = () => {
@@ -48,6 +49,9 @@ const Index = () => {
           AI-Powered Application Development Platform
         </Text>
         <Textarea placeholder="Describe your application..." value={input} onChange={(e) => setInput(e.target.value)} size="lg" />
+        <Link as={RouterLink} to="/instructions" color="teal.500" fontWeight="bold" mt={4}>
+          Instructions for App Builder
+        </Link>
         <HStack spacing={4}>
           <Button leftIcon={<FaCode />} colorScheme="teal" onClick={handleGenerateCode}>
             Generate Code
